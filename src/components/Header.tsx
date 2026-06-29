@@ -63,8 +63,8 @@ export default function Header({ cartCount, onOpenCart, activeSection }: HeaderP
             onClick={(e) => handleScrollTo(e, '#home')}
             className="flex items-center space-x-2 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-full bg-pastel-pink flex items-center justify-center text-warm-brown border border-pastel-pink-dark group-hover:bg-warm-brown group-hover:text-cream transition-all duration-300">
-              <Cake className="w-5 h-5 animate-pulse" />
+            <div className="w-10 h-10 rounded-full bg-accent-pink flex items-center justify-center text-white shadow-sm group-hover:bg-accent-pink-dark transition-all duration-300">
+              <span className="font-serif text-xl font-bold leading-none select-none">M</span>
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-2xl font-bold tracking-tight text-chocolate leading-none group-hover:text-warm-brown transition-colors">
@@ -85,17 +85,17 @@ export default function Header({ cartCount, onOpenCart, activeSection }: HeaderP
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleScrollTo(e, link.href)}
-                  className={`font-sans font-medium text-sm transition-all duration-200 relative py-1 focus:outline-none ${
+                  className={`font-sans font-semibold text-xs uppercase tracking-widest transition-all duration-200 relative py-1 focus:outline-none ${
                     isActive
-                      ? 'text-warm-brown'
-                      : 'text-chocolate/85 hover:text-warm-brown'
+                      ? 'text-accent-pink font-bold'
+                      : 'text-chocolate/85 hover:text-accent-pink font-semibold'
                   }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-pink"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -168,10 +168,10 @@ export default function Header({ cartCount, onOpenCart, activeSection }: HeaderP
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleScrollTo(e, link.href)}
-                    className={`block px-4 py-2.5 rounded-lg font-sans text-base font-semibold transition-all ${
+                    className={`block px-4 py-2.5 rounded-lg font-sans text-sm font-semibold uppercase tracking-wider transition-all ${
                       isActive
-                        ? 'bg-pastel-pink text-warm-brown font-bold'
-                        : 'text-chocolate/80 hover:bg-cream'
+                        ? 'bg-pastel-pink text-accent-pink font-bold border-l-4 border-accent-pink'
+                        : 'text-chocolate/80 hover:bg-cream hover:text-accent-pink'
                     }`}
                   >
                     {link.name}

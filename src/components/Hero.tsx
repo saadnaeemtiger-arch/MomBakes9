@@ -27,33 +27,30 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 bg-pastel-pink border border-pastel-pink-dark px-4 py-1.5 rounded-full text-warm-brown text-xs md:text-sm font-semibold tracking-wide"
+              className="inline-flex items-center space-x-2"
             >
-              <Sparkles className="w-4.5 h-4.5 text-gold animate-spin-slow" />
-              <span>Gourmet Home Bakery</span>
+              <div className="w-8 h-[1px] bg-gold" />
+              <span className="text-accent-pink font-bold text-xs uppercase tracking-[0.3em]">
+                Handcrafted with Love
+              </span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-chocolate leading-[1.1] tracking-tight"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-chocolate leading-[1.1] tracking-tight"
             >
-              Freshly Baked with <span className="text-warm-brown relative inline-block">
-                Love
-                <svg className="absolute left-0 bottom-0.5 w-full h-2.5 text-pastel-pink-dark -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0,5 Q50,10 100,5" stroke="currentColor" strokeWidth="6" fill="none" />
-                </svg>
-              </span>, Made for Every Celebration
+              Freshly Baked, Made for <span className="text-gold italic font-normal">Every Celebration</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="font-sans text-base sm:text-lg text-chocolate/80 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light"
+              className="font-sans text-base sm:text-lg text-warm-brown max-w-xl mx-auto lg:mx-0 leading-relaxed font-light"
             >
-              From birthdays to weddings, MomBakes creates handcrafted cakes and desserts that make every occasion unforgettable. Baked fresh with premium ingredients.
+              From intimate birthdays to grand weddings, MomBakes creates artisan cakes that make your special moments unforgettable. Baked fresh with premium ingredients.
             </motion.p>
 
             <motion.div
@@ -64,16 +61,16 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             >
               <button
                 onClick={() => onScrollToSection('products')}
-                className="w-full sm:w-auto px-8 py-4 bg-chocolate hover:bg-warm-brown text-cream-light font-display text-sm font-bold uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl premium-shimmer transition-all duration-300 flex items-center justify-center space-x-2 focus:outline-none"
+                className="w-full sm:w-auto px-8 py-4 bg-accent-pink hover:bg-accent-pink-dark text-white font-sans text-sm font-bold uppercase tracking-wider rounded-xl shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 focus:outline-none"
               >
                 <Cake className="w-4 h-4" />
-                <span>Order Now</span>
+                <span>Explore Collection</span>
               </button>
               <button
-                onClick={() => onScrollToSection('categories')}
-                className="w-full sm:w-auto px-8 py-4 bg-cream border-2 border-pastel-pink-dark hover:border-warm-brown text-chocolate hover:text-warm-brown font-display text-sm font-bold uppercase tracking-wider rounded-full shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center focus:outline-none"
+                onClick={() => onScrollToSection('custom-builder')}
+                className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-cream-dark hover:bg-white text-chocolate font-sans text-sm font-bold uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center justify-center focus:outline-none"
               >
-                Explore Our Cakes
+                Custom Request
               </button>
             </motion.div>
 
@@ -88,63 +85,38 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-gold text-gold" />
                 ))}
-                <span className="font-semibold text-chocolate font-display">5.0 Star Rated</span>
+                <span className="font-semibold text-chocolate font-display">4.9 (2,400+ Reviews)</span>
               </div>
               <div className="h-4 w-px bg-cream-dark hidden sm:block" />
               <div>
-                <span className="font-semibold text-chocolate">100% Handcrafted</span> with Premium Ingredients
+                <span className="font-semibold text-chocolate">Freshly Baked Daily</span> • Premium Ingredients
               </div>
             </motion.div>
           </div>
 
           {/* Visual Presentation Block */}
-          <div className="lg:col-span-6 relative order-1 lg:order-2 flex justify-center items-center">
-            {/* Soft backdrop decorative glow card */}
-            <div className="absolute w-[80%] h-[80%] rounded-full bg-pastel-pink blur-3xl opacity-60 z-0 animate-pulse" />
-
-            {/* Floating Visual Elements */}
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -left-6 z-20 bg-cream-light/90 border border-pastel-pink-dark shadow-md p-3.5 rounded-2xl flex items-center space-x-2.5 backdrop-blur-sm hidden sm:flex"
-            >
-              <div className="w-8 h-8 rounded-full bg-pastel-pink flex items-center justify-center text-warm-brown">
-                <Star className="w-4 h-4 fill-warm-brown" />
+          <div className="lg:col-span-6 relative order-1 lg:order-2 flex justify-center items-center w-full min-h-[400px]">
+            {/* Geometric Rotating Overlays */}
+            <div className="absolute inset-4 bg-pastel-pink-dark rounded-[40px] transform rotate-3 z-0" />
+            <div className="absolute inset-4 bg-cream-dark rounded-[40px] transform -rotate-3 overflow-hidden border-4 border-white shadow-2xl z-10">
+              <div className="w-full h-full bg-chocolate/5 flex flex-col items-center justify-center p-8 relative">
+                <img
+                  src={HERO_BANNER_IMAGE}
+                  alt="Beautiful artisanal cakes from MomBakes"
+                  className="absolute inset-0 w-full h-full object-cover opacity-90 transform hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-chocolate/95 via-chocolate/30 to-transparent" />
+                
+                {/* Floating star medallion inside the offset layout */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-accent-pink rounded-full flex items-center justify-center text-white font-serif font-bold shadow-lg animate-pulse">★</div>
+                
+                <div className="absolute bottom-6 left-6 right-6 text-left">
+                  <span className="text-white font-bold text-2xl font-serif block drop-shadow-md">Signature Red Velvet</span>
+                  <span className="text-gold font-semibold text-sm tracking-widest uppercase block mt-1">Starting from $45</span>
+                </div>
               </div>
-              <div>
-                <p className="font-display text-[10px] font-bold text-chocolate uppercase tracking-wider leading-none">Freshly Baked</p>
-                <p className="text-xs text-warm-brown font-semibold mt-0.5">Every Single Day</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -bottom-4 right-2 z-20 bg-cream-light/90 border border-pastel-pink-dark shadow-md p-3.5 rounded-2xl flex items-center space-x-2.5 backdrop-blur-sm hidden sm:flex"
-            >
-              <div className="w-8 h-8 rounded-full bg-gold/15 flex items-center justify-center text-gold-dark">
-                <Sparkles className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="font-display text-[10px] font-bold text-chocolate uppercase tracking-wider leading-none">Award Winning</p>
-                <p className="text-xs text-warm-brown font-semibold mt-0.5">Bespoke Decor</p>
-              </div>
-            </motion.div>
-
-            {/* Main Hero Image Frame */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative rounded-3xl overflow-hidden border-8 border-cream shadow-2xl z-10 aspect-[4/3] w-full max-w-lg md:max-w-xl"
-            >
-              <img
-                src={HERO_BANNER_IMAGE}
-                alt="Beautiful artisanal cakes from MomBakes"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+            </div>
           </div>
           
         </div>

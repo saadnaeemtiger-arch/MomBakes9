@@ -41,7 +41,7 @@ export default function Footer({ onScrollToSection }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-chocolate text-cream pt-20 pb-8 relative overflow-hidden border-t-4 border-gold">
+    <footer className="bg-chocolate text-cream pt-20 pb-8 relative overflow-hidden border-t-4 border-accent-pink">
       {/* Subtle decorative elements */}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-warm-brown opacity-10 blur-3xl rounded-full" />
       <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gold opacity-5 blur-3xl rounded-full" />
@@ -52,14 +52,14 @@ export default function Footer({ onScrollToSection }: FooterProps) {
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center space-x-2.5">
-              <div className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center text-gold border border-cream/15">
+              <div className="w-10 h-10 rounded-xl bg-cream/10 flex items-center justify-center text-accent-pink border border-cream/15">
                 <Cake className="w-5 h-5 animate-pulse" />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold tracking-tight text-white leading-none">
+                <span className="font-serif text-2xl font-normal tracking-tight text-white leading-none">
                   MomBakes
                 </span>
-                <span className="font-display text-[9px] uppercase tracking-[0.25em] text-gold font-medium leading-none mt-1">
+                <span className="font-sans text-[9px] uppercase tracking-[0.25em] text-gold font-medium leading-none mt-1">
                   Artisanal Bakery
                 </span>
               </div>
@@ -73,7 +73,7 @@ export default function Footer({ onScrollToSection }: FooterProps) {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-cream/5 border border-cream/10 flex items-center justify-center text-cream/80 hover:text-gold hover:bg-cream/10 transition-all"
+                className="w-9 h-9 rounded-xl bg-cream/5 border border-cream/10 flex items-center justify-center text-cream/80 hover:text-accent-pink hover:bg-cream/10 transition-all"
                 aria-label="Instagram link"
               >
                 <Instagram className="w-4 h-4" />
@@ -82,7 +82,7 @@ export default function Footer({ onScrollToSection }: FooterProps) {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-cream/5 border border-cream/10 flex items-center justify-center text-cream/80 hover:text-gold hover:bg-cream/10 transition-all"
+                className="w-9 h-9 rounded-xl bg-cream/5 border border-cream/10 flex items-center justify-center text-cream/80 hover:text-accent-pink hover:bg-cream/10 transition-all"
                 aria-label="Facebook link"
               >
                 <Facebook className="w-4 h-4" />
@@ -91,7 +91,7 @@ export default function Footer({ onScrollToSection }: FooterProps) {
                 href="https://wa.me/15550199"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-cream/5 border border-cream/10 flex items-center justify-center text-cream/80 hover:text-green-400 hover:bg-cream/10 transition-all"
+                className="w-9 h-9 rounded-xl bg-cream/5 border border-cream/10 flex items-center justify-center text-cream/80 hover:text-green-400 hover:bg-cream/10 transition-all"
                 aria-label="WhatsApp direct link"
               >
                 <MessageSquare className="w-4 h-4" />
@@ -154,17 +154,17 @@ export default function Footer({ onScrollToSection }: FooterProps) {
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full text-xs font-sans rounded-xl border border-cream/15 bg-white/5 px-4 py-3 text-white placeholder-cream/40 outline-none focus:border-gold focus:bg-white/10 transition-all"
+                  className="w-full text-xs font-sans rounded-xl border border-cream/15 bg-white/5 px-4 py-3 text-white placeholder-cream/40 outline-none focus:border-accent-pink focus:bg-white/10 transition-all"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubscribed}
-                className={`w-full py-2.5 rounded-xl font-display text-[10px] font-bold uppercase tracking-wider transition-all flex items-center justify-center space-x-2 shadow-sm ${
+                className={`w-full py-2.5 rounded-xl font-sans text-[10px] font-bold uppercase tracking-wider transition-all flex items-center justify-center space-x-2 shadow-sm ${
                   isSubscribed
                     ? 'bg-gold text-chocolate border-transparent'
-                    : 'bg-cream text-chocolate hover:bg-gold hover:text-chocolate'
+                    : 'bg-accent-pink text-white hover:bg-gold hover:text-chocolate'
                 }`}
               >
                 <AnimatePresence mode="wait">

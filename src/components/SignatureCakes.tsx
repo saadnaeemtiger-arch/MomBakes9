@@ -97,14 +97,14 @@ export default function SignatureCakes({
         
         {/* Header Block */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-          <p className="font-display text-xs md:text-sm font-bold text-warm-brown uppercase tracking-widest">
+          <p className="font-sans text-xs md:text-sm font-bold text-accent-pink uppercase tracking-[0.2em]">
             Handcrafted Signature Creations
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-chocolate tracking-tight">
-            Our Signature Cakes & Treats
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-chocolate tracking-tight">
+            Our Signature <span className="text-gold italic font-normal">Cakes & Treats</span>
           </h2>
-          <div className="w-16 h-1 bg-gold mx-auto rounded-full" />
-          <p className="font-sans text-sm text-chocolate/75 leading-relaxed font-light">
+          <div className="w-16 h-[1px] bg-gold mx-auto" />
+          <p className="font-sans text-sm text-warm-brown leading-relaxed font-light">
             Indulge in our exquisite assortment of cakes and pastries, freshly baked to perfection. Customize your cake sizes and flavors below and add them directly to your custom order inquiry.
           </p>
         </div>
@@ -117,10 +117,10 @@ export default function SignatureCakes({
               <button
                 key={tab.id}
                 onClick={() => onSetCategoryFilter(tab.id)}
-                className={`px-5 py-2.5 rounded-full font-display text-xs font-bold uppercase tracking-wider transition-all duration-300 focus:outline-none shadow-sm hover:shadow-md ${
+                className={`px-5 py-2.5 rounded-xl font-sans text-xs font-bold uppercase tracking-widest transition-all duration-300 focus:outline-none shadow-md ${
                   isActive
-                    ? 'bg-chocolate text-cream border border-chocolate-dark scale-105'
-                    : 'bg-white text-chocolate border border-cream-dark hover:bg-pastel-pink hover:text-warm-brown'
+                    ? 'bg-accent-pink text-white border border-accent-pink scale-105'
+                    : 'bg-white text-chocolate border border-cream-dark hover:bg-pastel-pink hover:text-accent-pink'
                 }`}
               >
                 {tab.name}
@@ -147,12 +147,12 @@ export default function SignatureCakes({
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-3xl border border-cream-dark overflow-hidden flex flex-col justify-between group shadow-sm hover:shadow-xl transition-all duration-300"
+                  className="bg-white rounded-3xl border border-[#F5F5F5] hover:border-accent-pink overflow-hidden flex flex-col justify-between group shadow-md transition-all duration-300"
                 >
                   {/* Image Holder */}
                   <div className="relative aspect-[4/3] bg-cream overflow-hidden">
                     {product.popular && (
-                      <div className="absolute top-4 left-4 z-10 bg-gold text-chocolate font-display text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm border border-gold-dark">
+                      <div className="absolute top-4 left-4 z-10 bg-accent-pink text-white font-sans text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">
                         Best Seller
                       </div>
                     )}
@@ -171,12 +171,12 @@ export default function SignatureCakes({
                     <div className="space-y-2">
                       <div className="flex items-center space-x-1">
                         <Star className="w-4 h-4 fill-gold text-gold" />
-                        <span className="text-xs font-bold text-chocolate font-display">{product.rating}</span>
+                        <span className="text-xs font-bold text-chocolate font-sans">{product.rating}</span>
                       </div>
-                      <h3 className="font-serif text-lg font-bold text-chocolate line-clamp-1 group-hover:text-warm-brown transition-colors">
+                      <h3 className="font-serif text-lg font-bold text-chocolate line-clamp-1 group-hover:text-accent-pink transition-colors">
                         {product.name}
                       </h3>
-                      <p className="font-sans text-xs text-chocolate/75 leading-relaxed font-light line-clamp-2">
+                      <p className="font-sans text-xs text-warm-brown leading-relaxed font-light line-clamp-2">
                         {product.description}
                       </p>
                     </div>
@@ -185,13 +185,13 @@ export default function SignatureCakes({
                     <div className="space-y-2.5 pt-2 border-t border-cream">
                       {/* Flavor Selector */}
                       <div className="space-y-1">
-                        <label className="block text-[10px] font-display font-bold uppercase tracking-wider text-warm-brown">
+                        <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-accent-pink">
                           Select Flavor:
                         </label>
                         <select
                           value={selection.flavor}
                           onChange={(e) => handleFlavorChange(product.id, e.target.value)}
-                          className="w-full text-xs font-sans rounded-xl border border-cream-dark bg-cream-light/60 px-3 py-2 text-chocolate outline-none hover:border-warm-brown focus:border-warm-brown focus:bg-white transition-all cursor-pointer"
+                          className="w-full text-xs font-sans rounded-xl border border-cream-dark bg-cream-light/60 px-3 py-2 text-chocolate outline-none hover:border-accent-pink focus:border-accent-pink focus:bg-white transition-all cursor-pointer"
                         >
                           {product.flavors.map((flavor) => (
                             <option key={flavor} value={flavor}>
@@ -203,13 +203,13 @@ export default function SignatureCakes({
 
                       {/* Size Selector */}
                       <div className="space-y-1">
-                        <label className="block text-[10px] font-display font-bold uppercase tracking-wider text-warm-brown">
+                        <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-accent-pink">
                           Select Size:
                         </label>
                         <select
                           value={selection.size}
                           onChange={(e) => handleSizeChange(product.id, e.target.value)}
-                          className="w-full text-xs font-sans rounded-xl border border-cream-dark bg-cream-light/60 px-3 py-2 text-chocolate outline-none hover:border-warm-brown focus:border-warm-brown focus:bg-white transition-all cursor-pointer"
+                          className="w-full text-xs font-sans rounded-xl border border-cream-dark bg-cream-light/60 px-3 py-2 text-chocolate outline-none hover:border-accent-pink focus:border-accent-pink focus:bg-white transition-all cursor-pointer"
                         >
                           {product.sizes.map((size) => (
                             <option key={size} value={size}>
@@ -223,18 +223,18 @@ export default function SignatureCakes({
                     {/* Pricing and Button */}
                     <div className="pt-3 border-t border-cream flex items-center justify-between">
                       <div className="flex flex-col">
-                        <span className="text-[10px] uppercase font-display font-bold text-chocolate/60 tracking-wider">Starting At</span>
-                        <span className="font-serif text-xl font-bold text-warm-brown">${product.startingPrice}</span>
+                        <span className="text-[10px] uppercase font-sans font-bold text-chocolate/60 tracking-wider">Starting At</span>
+                        <span className="font-serif text-xl font-bold text-gold">${product.startingPrice}</span>
                       </div>
 
                       <button
                         id={`add-to-basket-${product.id}`}
                         onClick={() => handleAddToInquiry(product)}
                         disabled={isAdded}
-                        className={`px-4 py-2.5 rounded-full font-display text-[10px] font-bold uppercase tracking-wider transition-all duration-300 flex items-center space-x-1.5 shadow-sm hover:shadow-md focus:outline-none ${
+                        className={`px-4 py-2.5 rounded-xl font-sans text-[10px] font-bold uppercase tracking-wider transition-all duration-300 flex items-center space-x-1.5 shadow-md focus:outline-none ${
                           isAdded
-                            ? 'bg-gold text-chocolate border border-gold-dark scale-95'
-                            : 'bg-chocolate hover:bg-warm-brown text-cream border border-chocolate-dark'
+                            ? 'bg-gold text-chocolate scale-95'
+                            : 'bg-accent-pink hover:bg-accent-pink-dark text-white hover:scale-105'
                         }`}
                       >
                         {isAdded ? (

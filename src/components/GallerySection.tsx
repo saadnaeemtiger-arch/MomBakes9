@@ -47,14 +47,14 @@ export default function GallerySection() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-          <p className="font-display text-xs md:text-sm font-bold text-warm-brown uppercase tracking-widest">
+          <p className="font-sans text-xs md:text-sm font-bold text-accent-pink uppercase tracking-[0.2em]">
             Baked Masterpieces
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-chocolate tracking-tight">
-            Our Sweet Gallery
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-chocolate tracking-tight">
+            Our Sweet <span className="text-gold italic font-normal">Gallery</span>
           </h2>
-          <div className="w-16 h-1 bg-gold mx-auto rounded-full" />
-          <p className="font-sans text-sm text-chocolate/75 leading-relaxed font-light">
+          <div className="w-16 h-[1px] bg-gold mx-auto" />
+          <p className="font-sans text-sm text-warm-brown leading-relaxed font-light">
             Browse through some of our favorite cake designs, custom catering orders, delicate desserts, and warm behind-the-scenes moments from our baking studio.
           </p>
         </div>
@@ -70,10 +70,10 @@ export default function GallerySection() {
                   setSelectedFilter(tab.id);
                   setLightboxIndex(null); // clear lightbox focus when switching filters
                 }}
-                className={`px-4 py-2 rounded-full font-display text-[10px] font-bold uppercase tracking-wider transition-all duration-300 focus:outline-none ${
+                className={`px-4 py-2 rounded-xl font-sans text-[10px] font-bold uppercase tracking-widest transition-all duration-300 focus:outline-none shadow-sm ${
                   isActive
-                    ? 'bg-warm-brown text-cream shadow-sm'
-                    : 'bg-cream border border-cream-dark text-chocolate hover:bg-pastel-pink hover:text-warm-brown'
+                    ? 'bg-accent-pink text-white border border-accent-pink scale-105'
+                    : 'bg-cream border border-cream-dark text-chocolate hover:bg-pastel-pink hover:text-accent-pink'
                 }`}
               >
                 {tab.name}
@@ -98,7 +98,7 @@ export default function GallerySection() {
                 transition={{ duration: 0.4 }}
                 whileHover={{ y: -4 }}
                 onClick={() => setLightboxIndex(index)}
-                className="group relative bg-white rounded-3xl border border-cream-dark shadow-sm hover:shadow-xl overflow-hidden aspect-[4/3] cursor-pointer"
+                className="group relative bg-white rounded-3xl border border-[#F5F5F5] hover:border-accent-pink shadow-md overflow-hidden aspect-[4/3] cursor-pointer"
               >
                 {/* Image element */}
                 <img
@@ -112,7 +112,7 @@ export default function GallerySection() {
                 {/* Hover overlay with detail and ZoomIn Icon */}
                 <div className="absolute inset-0 bg-gradient-to-t from-chocolate-dark/80 via-chocolate/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 space-y-2">
-                    <span className="text-[9px] uppercase font-display font-bold tracking-widest text-gold bg-white/10 px-2.5 py-1 rounded-full border border-white/15 inline-block">
+                    <span className="text-[9px] uppercase font-sans font-bold tracking-widest text-gold bg-white/10 px-2.5 py-1 rounded-lg border border-white/15 inline-block">
                       {item.category}
                     </span>
                     <h3 className="font-serif text-base font-bold text-cream-light leading-snug">
@@ -189,7 +189,7 @@ export default function GallerySection() {
 
                 {/* Image Details Panel */}
                 <div className="w-full text-center mt-6 space-y-1 max-w-xl">
-                  <span className="text-[10px] uppercase font-display font-bold tracking-widest text-gold">
+                  <span className="text-[10px] uppercase font-sans font-bold tracking-widest text-gold">
                     {filteredGallery[lightboxIndex].category}
                   </span>
                   <h4 className="font-serif text-lg font-bold text-cream-light leading-snug">

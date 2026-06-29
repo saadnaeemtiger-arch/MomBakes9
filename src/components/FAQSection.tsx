@@ -16,14 +16,14 @@ export default function FAQSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <p className="font-display text-xs md:text-sm font-bold text-warm-brown uppercase tracking-widest">
+          <p className="font-sans text-xs md:text-sm font-bold text-accent-pink uppercase tracking-[0.2em]">
             Common Inquiries
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-chocolate tracking-tight">
-            Frequently Asked Questions
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-chocolate tracking-tight">
+            Frequently Asked <span className="text-gold italic font-normal">Questions</span>
           </h2>
-          <div className="w-16 h-1 bg-gold mx-auto rounded-full" />
-          <p className="font-sans text-sm text-chocolate/75 leading-relaxed font-light">
+          <div className="w-16 h-[1px] bg-gold mx-auto" />
+          <p className="font-sans text-sm text-warm-brown leading-relaxed font-light">
             Got questions about custom cake planning, notices, delivery rates, or dietary recipes? We’ve gathered answers to help make your booking seamless.
           </p>
         </div>
@@ -37,8 +37,8 @@ export default function FAQSection() {
                 key={faq.id}
                 className={`bg-white rounded-2xl border transition-all duration-300 ${
                   isOpen
-                    ? 'border-warm-brown shadow-md ring-1 ring-warm-brown/10'
-                    : 'border-cream-dark shadow-sm hover:border-warm-brown/55'
+                    ? 'border-accent-pink shadow-md'
+                    : 'border-[#F5F5F5] shadow-sm hover:border-accent-pink'
                 }`}
               >
                 {/* Accordion Trigger Header */}
@@ -46,15 +46,15 @@ export default function FAQSection() {
                   onClick={() => handleToggle(faq.id)}
                   className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer group"
                 >
-                  <span className="font-serif text-base font-bold text-chocolate group-hover:text-warm-brown transition-colors">
+                  <span className="font-serif text-base font-bold text-chocolate group-hover:text-accent-pink transition-colors">
                     {faq.question}
                   </span>
                   
                   {/* Rotating Chevron Icon */}
                   <div
-                    className={`p-1.5 rounded-full border transition-all duration-300 ${
+                    className={`p-1.5 rounded-xl border transition-all duration-300 ${
                       isOpen
-                        ? 'bg-pastel-pink border-pastel-pink-dark text-warm-brown rotate-180'
+                        ? 'bg-pastel-pink border-pastel-pink-dark text-accent-pink rotate-180'
                         : 'bg-cream border-cream-dark text-chocolate/60 group-hover:text-chocolate'
                     }`}
                   >
@@ -72,7 +72,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.25, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-1 border-t border-cream text-xs sm:text-sm text-chocolate/80 leading-relaxed font-light font-sans">
+                      <div className="px-6 pb-6 pt-1 border-t border-cream text-xs sm:text-sm text-warm-brown leading-relaxed font-light font-sans">
                         {faq.answer}
                       </div>
                     </motion.div>

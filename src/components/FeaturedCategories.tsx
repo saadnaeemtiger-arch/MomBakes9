@@ -13,14 +13,14 @@ export default function FeaturedCategories({ onSelectCategory }: FeaturedCategor
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <p className="font-display text-xs md:text-sm font-bold text-warm-brown uppercase tracking-widest">
+          <p className="font-sans text-xs md:text-sm font-bold text-accent-pink uppercase tracking-[0.2em]">
             Baked with Passion
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-chocolate tracking-tight">
-            Explore Our Sweet Categories
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-chocolate tracking-tight">
+            Explore Our <span className="text-gold italic font-normal">Sweet Collections</span>
           </h2>
-          <div className="w-16 h-1 bg-gold mx-auto rounded-full" />
-          <p className="font-sans text-sm text-chocolate/75 leading-relaxed font-light">
+          <div className="w-16 h-[1px] bg-gold mx-auto" />
+          <p className="font-sans text-sm text-warm-brown leading-relaxed font-light">
             Each category is crafted with love and tailored recipes to bring you the finest homemade treats, from fluffy cupcakes to majestic wedding centerpieces.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function FeaturedCategories({ onSelectCategory }: FeaturedCategor
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               whileHover={{ y: -8 }}
-              className="group bg-white rounded-3xl border border-cream-dark shadow-sm hover:shadow-xl overflow-hidden flex flex-col transition-all duration-300"
+              className="group bg-white rounded-3xl border border-[#F5F5F5] hover:border-accent-pink overflow-hidden flex flex-col transition-all duration-300 shadow-md"
             >
               {/* Image Frame with Zoom effect */}
               <div className="relative aspect-[4/3] overflow-hidden bg-cream-dark">
@@ -52,17 +52,17 @@ export default function FeaturedCategories({ onSelectCategory }: FeaturedCategor
               {/* Content Box */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <h3 className="font-serif text-lg font-bold text-chocolate group-hover:text-warm-brown transition-colors">
+                  <h3 className="font-serif text-lg font-bold text-chocolate group-hover:text-accent-pink transition-colors">
                     {category.name}
                   </h3>
-                  <p className="font-sans text-xs text-chocolate/70 leading-relaxed font-light line-clamp-2">
+                  <p className="font-sans text-xs text-warm-brown leading-relaxed font-light line-clamp-2">
                     {category.description}
                   </p>
                 </div>
 
                 <button
                   onClick={() => onSelectCategory(category.id)}
-                  className="inline-flex items-center space-x-1.5 text-xs font-display font-bold text-warm-brown uppercase tracking-widest group-hover:text-chocolate transition-colors focus:outline-none mt-auto"
+                  className="inline-flex items-center space-x-1.5 text-xs font-sans font-bold text-accent-pink uppercase tracking-widest hover:text-accent-pink-dark transition-colors focus:outline-none mt-auto"
                 >
                   <span>View Collection</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
