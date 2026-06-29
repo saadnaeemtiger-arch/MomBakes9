@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Montserrat", sans-serif;
+
+  --color-cream-light: #FCF9F5;
+  --color-cream: #FAF5EE;
+  --color-cream-dark: #F3EAE0;
+  --color-gold: #D4AF37;
+  --color-gold-dark: #B39024;
+  --color-pastel-pink: #FEECEB;
+  --color-pastel-pink-dark: #FCD6D3;
+  --color-warm-brown: #8D5B4C;
+  --color-chocolate: #3D221D;
+  --color-chocolate-dark: #26120F;
+}
+
+/* Base custom styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-light);
+  color: var(--color-chocolate);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-brown);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-chocolate);
+}
+
+/* Elegant pulse & floating animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Shimmer overlay for buttons and cards */
+.premium-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 55%
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.premium-shimmer:hover::after {
+  transform: translate(50%, 50%) rotate(45deg);
+}

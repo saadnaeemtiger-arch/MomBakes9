@@ -1,0 +1,6 @@
+{
+  "name": "MomBakes",
+  "description": "A premium and modern custom cake bakery website featuring visual product categories, interactive signature cakes, custom cake builders, an elegant gallery, booking inquiries, and a seamless client experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
